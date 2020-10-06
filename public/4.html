@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Take the Words</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/bootstrap-grid.min.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/style2.css">
+    <script type="text/javascript" src="javascripts/jquery-3.4.1.min.js"> </script>
+    <script type="module" src="javascripts/audio-recorder.js"></script>
+    </head>
+  <body>
+    <div class="container">
+      <div class="row">
+          <div class="col-md-auto">
+      <h1>Take <br>the <br>words <br> right <br> out of <br> my <br>  mouth</h1>
+  </div>
+
+  <div class="col">
+    <h3>YOUR INNER VOICE</h3>
+    <p> To realize a face to face encounter with your inner voice we would like you to write a message to yourself.
+    </p>
+</div>
+<div class="col">
+
+
+  <h3> What would you like to say to yourself? </h3>
+  <p>Please write below (in english) what you would like to say to yourself more often. Take a moment to decide what you would like to say and what needs to be said.
+ </p>
+    <form action= "http://127.0.0.1:3000/process_get" method = "GET" id="usrform">
+    <!-- <input type = "text" name = "text_Entry"> -->
+ <textarea name ="text_Entry" placeholder="Write what you would like to say to yourself here..." rows="12" cols="100" form="usrform"></textarea>
+   <button id="BlueButton" type="submit" class=".btn-primary btn-block" form="usrform" value="submit">Submit</button>
+</form>
+<p> We appreciate the intimacy of this question, do not feel rushed or pressured.
+Your contribution will become part of an anonymous chorus of voices that will be accessible online.
+</p>
+<div id="outputSync"> </div>
+</div>
+
+
+<form action= "http://127.0.0.1:3000/home" method = "GET" id="home">
+<!-- <button id="home" type="submit" class=".btn btn-primary btn-block" form="home" value="submit">home</button> -->
+
+
+  </div>
+</div>
+      </div>
+    </div>
+
+    <div id="overlay">
+        <!-- <div id="text"> -->
+        <div id="text">
+      Thank you for your contribution<br>
+        This process can take a few minutes<br>
+        Please walk to the mirror with the guides<br> to hear your inner voice out loud.
+
+</div>
+        <div id="loader"> </div>
+
+</div>
+
+
+      <!-- Footer -->
+      <footer class="page-footer font-small blue fixed-bottom">
+
+
+            <!-- <div class="footer-copyright-text-right"> -->
+
+        <!-- </div> -->
+
+          </div>
+        <!--Grid row-->
+
+      </footer>
+      <!-- Footer -->
+
+    </body>
+
+    <script>
+    function on(){
+    document.getElementById("overlay").style.display = "block";
+  }
+
+
+    document.getElementById("BlueButton").addEventListener("click", function(){
+      on();
+    })
+
+
+// $('textarea#text_Entry').addEventListener("click", function(){
+//   $(this).val('');
+// });
+
+// $('textarea#text_Entry').focus(function() {
+//  $(this).val('');
+// });
+
+
+
+    function Submit_Text(){
+      on();
+      // $.get("/process_get")
+      //   .done(function (data) {
+      //     $("#outputSync").text(data)
+      //     alert("Ready for Next Person");
+      //   })
+      //   .fail(function (data) {
+      //     $("#outputSync").text(JSON.stringify(data) || "Error occurred")
+      //   })
+      //   .always(function () {
+      //     $("#runSync").prop("disabled", false)
+      //   })
+}
+
+</script>
+
+
+</html>
